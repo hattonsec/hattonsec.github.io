@@ -8,19 +8,73 @@
         body {
             margin: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0; /* Optional: background color */
+            background-color: #f9f9f9; /* Neutral background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        .obituary {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
         img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* Ensures image scales nicely */
+            max-width: 80%;
+            max-height: 60%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        .button {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #007bff; /* Professional blue */
+            padding: 10px 20px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            background-color: #f8f9fa; /* Light grey for subtle contrast */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin: 10px 0; /* Adds spacing between buttons */
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .twitter-button {
+            font-size: 13px; /* Smaller font size */
+            padding: 8px 16px; /* Smaller padding */
+            border: 1.5px solid #007bff; /* Slightly thinner border */
+        }
+        p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555; /* Subtle grey for less emphasis */
+        }
+        .statistics {
+            margin-top: 20px;
+            font-size: 16px;
+            font-style: italic;
+            color: #777;
         }
     </style>
 </head>
 <body>
-    <img src="chill.png">
+    <div class="obituary">
+        November 15th, 2024 - November 28th, 2024
+    </div>
+    <img src="chill.png" alt="Cybersecurity Meme">
+    <a class="button" href="https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS" target="_blank">
+        Explore linPEAS on GitHub
+    </a>
+    <a class="button twitter-button" href="https://www.twitter.com/hattonsec" target="_blank">
+        @hattonsec on Twitter (X?)
+    </a>
+    <p>(The link is real this time, but you should probably still check it)</p>
 </body>
 </html>
