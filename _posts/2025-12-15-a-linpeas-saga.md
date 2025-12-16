@@ -213,6 +213,21 @@ Common characteristics were:
 
 This category aligned closely with how most people practise and experiment, and wasn’t particularly surprising.
 
+# What this could have been
+
+Had this domain been controlled by a malicious actor, each execution would have represented arbitrary code execution on the target host, often with elevated privileges. In many cases, that would have amounted to full system compromise, not just passive data exposure.
+
+At that point, an attacker could have:
+
+- Executed follow-on payloads as root, including installing persistence mechanisms such as systemd services, cron jobs, or modified login scripts
+- Established outbound command-and-control channels over HTTPS or DNS, blending into normal egress traffic
+- Deployed credential harvesters or memory scraping tools to capture passwords, SSH keys, and cloud credentials
+- Pivoted laterally from already-compromised web servers or test hosts into adjacent internal systems
+- Selectively targeted production infrastructure while ignoring lab or training environments to reduce noise and detection
+- Maintained long-term access by backdooring commonly used tooling rather than the host itself
+
+The speed and volume of execution showed that this level of access could have been achieved immediately and at scale, without exploiting a vulnerability or drawing attention.
+
 # The Aftermath: RIP [LinPEAS.sh](http://linpeas.sh/)
 
 In late November, I attended the Hack The Box UK meetup in Cheltenham. Over the course of the evening, I mentioned the project to a few people in conversation. It wasn’t a formal talk, just explaining what I’d been looking at and why I thought it was interesting.
