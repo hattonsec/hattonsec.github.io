@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+
+<body>
+    <div class="background-grid"></div>
+    <div class="container">
+        <header>
+            <a href="/" class="brand">
+                <span class="status-dot"></span>
+                {{ site.title }}
+            </a>
+            <nav>
+                {% for item in site.navigation %}
+                <a href="{{ item.url }}">{{ item.title }}</a>
+                {% endfor %}
+            </nav>
+        </header>
+
+        <main>
+            {% if page.title and page.layout != "home" and page.layout != "post" %}
+            <!-- Only show page title on non-home pages and non-post pages (posts handle their own title) -->
+            <h1 class="page-title">{{ page.title }}</h1>
+            {% endif %}
+
+            <div class="content-wrapper">
+                {{ content }}
+            </div>
+        </main>
+
+        <footer>
+            <div class="copyright">&copy; {{ site.time | date: '%Y' }} {{ site.title }}</div>
+        </footer>
+    </div>
+</body>
+
+</html>

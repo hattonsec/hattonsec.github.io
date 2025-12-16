@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title" style="margin-top: 0;">{{ page.title }}</h1>
+    <div class="post-meta-header">
+      <span><span style="color: var(--accent);">></span> {{ page.date | date: "%Y-%m-%d" }}</span>
+      {% if page.categories %}
+      <span>// {{ page.categories | join: ', ' }}</span>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="content-wrapper">
+    {{ content }}
+  </div>
+
+  <div class="post-footer" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px dashed var(--border);">
+    <a href="/" style="font-family: var(--font-mono); font-size: 0.9rem; text-decoration: none;">
+      <span style="color: var(--accent); margin-right: 5px;">$</span>cd ..
+    </a>
+  </div>
+</article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.content-wrapper img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+
+        // Create full-size image
+        const lightImg = document.createElement('img');
+        lightImg.src = img.src;
+        lightImg.className = 'lightbox-image';
+
+        // Add to overlay
+        overlay.appendChild(lightImg);
+        document.body.appendChild(overlay);
+
+        // Prevent scrolling
+        document.body.style.overflow = 'hidden';
+
+        // Close handler
+        const closeLightbox = () => {
+          document.body.removeChild(overlay);
+          document.body.style.overflow = '';
+        };
+
+        overlay.addEventListener('click', closeLightbox);
+
+        // Close on Escape key
+        document.addEventListener('keydown', function escHandler(e) {
+          if (e.key === 'Escape') {
+            closeLightbox();
+            document.removeEventListener('keydown', escHandler);
+          }
+        });
+      });
+    });
+  });
+</script>

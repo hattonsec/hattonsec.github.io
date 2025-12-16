@@ -1,0 +1,11 @@
+_site/
+.sass-cache/
+.jekyll-metadata
+.jekyll-cache/
+vendor/
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

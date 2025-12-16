@@ -1,0 +1,44 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero">
+  <h1>
+    <span style="color: var(--text-muted); font-size: 0.5em; display: block; margin-bottom: 0px; font-weight: 500;">
+      Hello, I'm
+    </span>
+    hattonsec<span style="color: var(--accent);">.</span>
+  </h1>
+
+  <p style="font-size: 1.25rem; max-width: 600px; color: var(--text-secondary);">
+    Professional penetration tester and security researcher.<br>
+    Curious by nature, I focus on offensive security across web apps, internal networks, cloud, and research labs.
+    <br><br>
+    <span style="color: var(--text-main);">
+      Testing assumptions, exposing weaknesses, and learning how systems break.
+    </span>
+  </p>
+</section>
+
+
+<section class="latest-intel">
+  <h3 style="margin-bottom: 2rem; display: flex; align-items: center; gap: 10px;">
+    <span style="color: var(--accent); font-family: var(--font-mono); font-size: 0.8em;">$</span>
+    Latest Intel
+  </h3>
+
+  <div class="post-list">
+    {% for post in site.posts limit:6 %}
+    {% unless post.visible == false %}
+    <a href="{{ post.url | relative_url }}" class="post-card">
+      <div class="post-meta">{{ post.date | date: "%b %d, %Y" }}</div>
+      <h4 class="post-link" style="margin-top:0;">{{ post.title }}</h4>
+      <div class="post-excerpt">
+        {{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}
+      </div>
+    </a>
+    {% endunless %}
+    {% endfor %}
+  </div>
+</section>

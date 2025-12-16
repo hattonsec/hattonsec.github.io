@@ -1,0 +1,21 @@
+title: hattonsec
+description: >-
+  Penetration Tester & Security Researcher.
+baseurl: ""
+url: "https://hattonsec.com" 
+
+# Build settings
+markdown: kramdown
+theme: null
+permalink: /:title/
+
+# Navigation Links
+navigation:
+  - title: home
+    url: /
+  - title: blog
+    url: /blog/
+  - title: about
+    url: /about
+  - title: linkedin
+    url: https://linkedin.com/in/yourusername
