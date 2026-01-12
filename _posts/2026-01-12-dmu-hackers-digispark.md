@@ -105,7 +105,7 @@ void loop()
   DigiKeyboard.delay(600);
 
   // Enters a YouTube link and presses enter
-  DigiKeyboard.print("https://www.youtube.com/watch?v=KP4LoBFMNmw");
+  DigiKeyboard.print("https://www.youtube.com/watch?v=EDYUzH5dbCw");
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
 
   for (;;) {/* Stops the loop */}
@@ -122,7 +122,7 @@ Uploading to a Digispark is different from most Arduino boards.
 2. Click Upload (arrow button) in the Arduino IDE
 3. Wait for the message: Plug in device now
 4. Plug in the Digispark within 60 seconds
-5. Wait for upload to complete ("Micronucleus done. Thank you!)
+5. Wait for upload to complete (`"Micronucleus done. Thank you!"`)
 6. Your script should run automatically. You can unplug and plug the Digispark back in to run your script again.
 7. If you wish to modify the script on your Digispark, unplug the Digispark, change your script, and start from step 1 again.
 
@@ -164,5 +164,6 @@ The ATtiny85 has:
 - 8 KB flash memory total
 - Approximately 5 to 6 KB available after USB and bootloader
 - 512 bytes of RAM
+
 
 Payloads must be short and simple.
